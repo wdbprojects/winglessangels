@@ -1,0 +1,11 @@
+/* BASE STYLES */
+@import "./base/variables";
+@import "./base/global";
+
+/* MODULES */
+@import "./modules/header";
+@import "./modules/mainContent";
+@import "./modules/footer";
+@import "./modules/layout";
+@import "./modules/loginreg";
+@import "./modules/utils";

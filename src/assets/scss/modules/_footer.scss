@@ -1,0 +1,13 @@
+.mainFooter {
+  display: block;
+  padding: 2rem;
+  background-color: $light4;
+  text-align: center;
+  &__text {
+    p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $dark7;
+    }
+  }
+}
