@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import { alpha } from "@mui/material/styles";
 import styled from "@emotion/styled";
 import {
   IconButton,
   Toolbar,
   Box,
   AppBar,
-  Typography,
   InputBase,
   Badge,
   Avatar,
@@ -69,96 +66,101 @@ const Header = (props) => {
     );
   };
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#F8F8F8" }}>
-      <StyledToolbar>
-        <Box sx={{ padding: "0px", width: "300px" }}>
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Wingless Angels - logo"
-              style={{
-                display: "block",
-                padding: "0px",
-                margin: "0px",
-                height: "40px",
-              }}
-            />
-          </Link>
-        </Box>
-        <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} />
-        <Search className="topSearchCont">
-          <Box>
-            <SearchIcon
-              sx={{
-                color: "#A6A6A6",
-                fontSize: "2rem",
-                margin: "0px",
-                padding: "0px",
-              }}
-            />
-          </Box>
-          <InputBase
-            placeholder="Search Wingless Angels..."
-            sx={{
-              width: "100%",
-              padding: "3px 0.5rem",
-              fontSize: "1.6rem",
-            }}
-          />
-        </Search>
-        <Icons className="topIconsCont">
-          <IconButton component={Link} to="/">
-            <Avatar
-              alt="aV"
-              src={localStorage.getItem("waAvatar")}
-              sx={{ width: 28, height: 28 }}
-            />
-          </IconButton>
-          <IconButton>
-            <Badge
-              badgeContent={4}
-              color="error"
-              sx={{
-                "& .MuiBadge-badge": {
-                  fontSize: 10,
-                  height: 20,
-                  width: 20,
-                  top: "5px",
-                },
-              }}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}>
-              <ModeCommentIcon color="secondary" sx={{ fontSize: "2.6rem" }} />
-            </Badge>
-          </IconButton>
-          <IconButton>
-            <Badge
-              badgeContent={2}
-              color="error"
-              sx={{
-                "& .MuiBadge-badge": {
-                  fontSize: 10,
-                  height: 20,
-                  width: 20,
-                  top: "5px",
-                },
-              }}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}>
-              <NotificationsIcon
-                color="secondary"
-                sx={{ fontSize: "2.6rem" }}
+    <Box sx={{ position: "relative", display: "block" }}>
+      <AppBar position="sticky" sx={{ backgroundColor: "#F8F8F8" }}>
+        <StyledToolbar>
+          <Box sx={{ padding: "0px", width: "300px" }}>
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Wingless Angels - logo"
+                style={{
+                  display: "block",
+                  padding: "0px",
+                  margin: "0px",
+                  height: "40px",
+                }}
               />
-            </Badge>
-          </IconButton>
-          <LogOutIcon />
-        </Icons>
-      </StyledToolbar>
-    </AppBar>
+            </Link>
+          </Box>
+          <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} />
+          <Search className="topSearchCont">
+            <Box>
+              <SearchIcon
+                sx={{
+                  color: "#A6A6A6",
+                  fontSize: "2rem",
+                  margin: "0px",
+                  padding: "0px",
+                }}
+              />
+            </Box>
+            <InputBase
+              placeholder="Search Wingless Angels..."
+              sx={{
+                width: "100%",
+                padding: "3px 0.5rem",
+                fontSize: "1.6rem",
+              }}
+            />
+          </Search>
+          <Icons className="topIconsCont">
+            <IconButton component={Link} to="/">
+              <Avatar
+                alt="aV"
+                src={localStorage.getItem("waAvatar")}
+                sx={{ width: 28, height: 28 }}
+              />
+            </IconButton>
+            <IconButton>
+              <Badge
+                badgeContent={4}
+                color="error"
+                sx={{
+                  "& .MuiBadge-badge": {
+                    fontSize: 10,
+                    height: 20,
+                    width: 20,
+                    top: "5px",
+                  },
+                }}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}>
+                <ModeCommentIcon
+                  color="secondary"
+                  sx={{ fontSize: "2.6rem" }}
+                />
+              </Badge>
+            </IconButton>
+            <IconButton>
+              <Badge
+                badgeContent={2}
+                color="error"
+                sx={{
+                  "& .MuiBadge-badge": {
+                    fontSize: 10,
+                    height: 20,
+                    width: 20,
+                    top: "5px",
+                  },
+                }}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}>
+                <NotificationsIcon
+                  color="secondary"
+                  sx={{ fontSize: "2.6rem" }}
+                />
+              </Badge>
+            </IconButton>
+            <LogOutIcon />
+          </Icons>
+        </StyledToolbar>
+      </AppBar>
+    </Box>
   );
 };
 

@@ -7,12 +7,11 @@ import bg_login from "../assets/images/bg-form2.jpg";
 const LoginPage = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("/login", {
         username: username,
         password: password,
       });
@@ -21,7 +20,7 @@ const LoginPage = (props) => {
         localStorage.setItem("waUsername", response.data.username);
         localStorage.setItem("waAvatar", response.data.avatar);
         props.setLoggedIn(true);
-        setLoggedIn(true);
+        props.setLoggedIn(true);
       } else {
         console.log("Incorrect name/password");
       }
@@ -36,10 +35,10 @@ const LoginPage = (props) => {
   }, []);
 
   useEffect(() => {
-    if (loggedIn) {
+    if (props.loggedIn) {
       return navigate("/");
     }
-  }, [loggedIn]);
+  }, [props.loggedIn]);
 
   return (
     <div id="plainContent" className="plainContent">

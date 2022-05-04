@@ -5,3 +5,38 @@
     border-radius: 16px;
   }
 }
+
+.flashMessage {
+  position: absolute;
+  top: 66px;
+  display: none !important;
+  width: 100vw;
+  z-index: 999;
+  animation: floatingAlert ease-in 5s forwards;
+  animation-fill-mode: forwards;
+}
+.flashMessages .flashMessage:last-of-type {
+  display: flex !important;
+}
+@keyframes floatingAlert {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+  }
+  9% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  91% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+  }
+}
